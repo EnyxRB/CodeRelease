@@ -576,11 +576,12 @@ if (dsClk("init")){
     colorPrint("Slave connected.","","")    
 }
 
-if (httpClk()){
+if (httpClk()){    
     if (httpData()==getCode()){
         printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(0,161,255),"up to date!")    
     }
     else{
         printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(150,0,0),"OUT OF DATE!",vec(255)," get the newest version now at: ",vec(0,161,255),"https://github.com/EnyxRB/CodeRelease/blob/master/Expression2/Simple%20Holo%20Model%20Creator")    
     }
+    runOnHTTP(0)
 }
