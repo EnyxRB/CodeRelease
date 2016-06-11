@@ -584,10 +584,8 @@ if (dsClk("init")){
 }
 
 if (httpClk()){
-    LCode = httpData():explode(" ")
-    GitCode = LCode:concat("")  
-    LCurCode = getCode():explode(" ")
-    CurCode = LCurCode:concat("")
+    GitCode = httpData() 
+    CurCode = getCode()
     if (GitCode==CurCode){
         printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(0,161,255),"up to date!")    
     }
