@@ -110,7 +110,7 @@ if (first() | dupefinished()){
     runOnChat(1)
     dsJoinGroup("holoCreator")  
     runOnHTTP(1)
-    httpRequest("http://pastebin.com/NrD8CJq0")
+    httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Simple%20Holo%20Model%20Creator")
         
     QTable=array("a")
     QMark = vonEncode(QTable):explode("")[1,string]
@@ -577,7 +577,10 @@ if (dsClk("init")){
 }
 
 if (httpClk()){
-    #print(httpData()) 
-    local D = httpData():explode("<ol class="+QMark+"text"+QMark+"><li class="+QMark+"li1"+QMark+"><div class="+QMark+"de1"+QMark+">")  
-    print(D[2,string]) 
+    if (httpData()==getCode()){
+        print("Same code")    
+    }
+    else{
+        print("Diff code")    
+    }
 }
