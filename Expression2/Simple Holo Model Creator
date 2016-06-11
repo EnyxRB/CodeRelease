@@ -100,6 +100,8 @@ if (first() | dupefinished()){
 #(new) -scale x,y,z function for custom scaling by unit amounts. Same as holoScaleUnits().
 #(new) -scalem x,y,z function for custom scaling by multiple amounts. Same as holoScale().
 #(change) Changed around layout of scaleHolo function to allow multiplier scaling as well as unit scaling.
+#(add) Added version control compatibility, checks current version against online updated version.
+#(add) Added -update command for users with out of date / modified versions of the software, this whole version control thing is just for fun.
 #--------------------------------------------------------------------------#
 
 if (first() | dupefinished()){
