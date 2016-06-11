@@ -1,0 +1,11 @@
+@name Simple Holo Model Creator Slave
+@inputs 
+@outputs 
+@persist Boss:entity
+@trigger 
+
+if (first() | dupefinished()){
+    Boss = dsProbe("holoCreator")[1,entity]
+    dsJoinGroup("holoCreator")
+    dsSendDirect("init",Boss,0)    
+}
