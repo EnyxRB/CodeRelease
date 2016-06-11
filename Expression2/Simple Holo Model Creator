@@ -110,9 +110,14 @@ if (first() | dupefinished()){
     
     runOnKeys(owner(),1)
     runOnChat(1)
-    dsJoinGroup("holoCreator")  
+    dsJoinGroup("holoCreator") 
+    
+    #ifdef httpClk() 
     runOnHTTP(1)
     httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Simple%20Holo%20Model%20Creator")
+    #else
+        printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"version control is disabled due to missing HTTP wire extention")  
+    #endif
         
     QTable=array("a")
     QMark = vonEncode(QTable):explode("")[1,string]
@@ -585,6 +590,7 @@ if (dsClk("init")){
     colorPrint("Slave connected.","","")    
 }
 
+#ifdef httpClk()
 if (httpClk()){
     GitCode = httpData() 
     CurCode = getCode()
@@ -593,11 +599,8 @@ if (httpClk()){
     }
     else{
         UpdateOption = 1
-        #ifdef entity:remoteUpload(string)
-            printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(200,0,0),"OUT OF DATE!",vec(255),"type",vec(0,161,255)," -update",vec(255)," to automatically update to the newest version.")    
-        #else
-            printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(200,0,0),"OUT OF DATE!",vec(255)," get the newest version now at: ",vec(0,161,255),"https://github.com/EnyxRB/CodeRelease/blob/master/Expression2/Simple%20Holo%20Model%20Creator")    
-        #endif
+        printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(200,0,0),"OUT OF DATE!",vec(255),"type",vec(0,161,255)," -update",vec(255)," to automatically update to the newest version.")    
     }
     runOnHTTP(0)
 }
+#endif
