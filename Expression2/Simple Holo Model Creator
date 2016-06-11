@@ -570,7 +570,8 @@ if (chatClk(owner())){
     }   
     elseif (Chat[1,string]=="-update"){
         if (UpdateOption==1){
-            entity():remoteSetCode(GitCode)    
+            entity():remoteSetCode(GitCode) 
+            reset()   
             UpdateOption=0    
         }    
     }          
@@ -583,8 +584,8 @@ if (dsClk("init")){
 }
 
 if (httpClk()){
-    GitCode = httpData():trim()    
-    if (GitCode==getCode():trim()){
+    GitCode = httpData():replace(" ","")   
+    if (GitCode==getCode():replace(" ","")){
         printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(0,161,255),"up to date!")    
     }
     else{
