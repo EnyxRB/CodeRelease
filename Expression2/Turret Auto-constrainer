@@ -23,7 +23,7 @@ if (first()){
         }
         else{
             return 0    
-        }  
+        }
     }
    
     function void returnVisual(Num:number){
