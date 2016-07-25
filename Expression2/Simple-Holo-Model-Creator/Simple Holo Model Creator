@@ -100,11 +100,12 @@ if (first() | dupefinished()){
 #(new) -scale x,y,z function for custom scaling by unit amounts. Same as holoScaleUnits().
 #(new) -scalem x,y,z function for custom scaling by multiple amounts. Same as holoScale().
 #(change) Changed around layout of scaleHolo function to allow multiplier scaling as well as unit scaling.
-#(add) Added version control compatibility, checks current version against online updated version.
-#(add) Added -update command for users with out of date / modified versions of the software, this whole version control thing is just for fun.
+#(new) Added version control compatibility, checks current version against online updated version.
+#(new) Added -update command for users with out of date / modified versions of the software, this whole version control thing is just for fun.
 #--------------------------------VERSION 1.3--------------------------------#
 #(change) Changed method of roation to rotateAroundAxis method, allowing for easier and more memerable rotations.
-#(add) Added update telling user new inc value for ang, scaling and moving holos.
+#(new) Added update telling user new inc value for ang, scaling and moving holos.
+#(change) Github auto update URL changed to new folder arrangement.
 #--------------------------------------------------------------------------#
 
 if (first() | dupefinished()){
@@ -117,7 +118,7 @@ if (first() | dupefinished()){
     
     #ifdef httpClk() 
     runOnHTTP(1)
-    httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Simple%20Holo%20Model%20Creator")
+    httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Simple-Holo-Model-Creator/Simple%20Holo%20Model%20Creator")
     #else
         printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"version control is disabled due to missing HTTP wire extention")  
     #endif
