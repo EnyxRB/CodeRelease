@@ -133,7 +133,7 @@ if (first() | dupefinished()){
     
     #ifdef httpClk() 
     runOnHTTP(1)
-    httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Simple-Holo-Model-Creator/Simple%20Holo%20Model%20Creator")
+    httpRequest("https://raw.githubusercontent.com/EnyxRB/CodeRelease/master/Expression2/Holography-Modelling-Tool/Holography%20Modelling%20Tool")
     #else
         printColor(vec(0,255,0),"[HMT]",vec(0,175,0),"["+Version+"] ",vec(255),"version control is disabled due to missing HTTP wire extention")  
     #endif
