@@ -9,9 +9,6 @@ if (dupefinished()) {reset()}
 
 if (first()){
 
-    dsSetScope(2)
-    dsJoinGroup("CryNet")   
-
     Bots = dsProbe("CryNet")
     StartBotCount = Bots:count()
         
@@ -105,5 +102,5 @@ if (BotDestroy){
         
         stoptimer("interval")
     }
-    
+       
 }
