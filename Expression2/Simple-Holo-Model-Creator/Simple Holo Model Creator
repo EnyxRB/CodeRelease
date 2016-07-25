@@ -106,6 +106,7 @@ if (first() | dupefinished()){
 #(change) Changed method of roation to rotateAroundAxis method, allowing for easier and more memerable rotations.
 #(new) Added update telling user new inc value for ang, scaling and moving holos.
 #(change) Github auto update URL changed to new folder arrangement.
+#(change) Updated the auto update response print
 #--------------------------------------------------------------------------#
 
 if (first() | dupefinished()){
@@ -609,7 +610,7 @@ if (httpClk()){
     }
     else{
         UpdateOption = 1
-        printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(200,0,0),"OUT OF DATE!",vec(255),"type",vec(0,161,255)," -update",vec(255)," to automatically update to the newest version.")    
+        printColor(vec(0,255,0),"[SHMC "+Version+"] ",vec(255),"is ",vec(200,0,0),"OUT OF DATE! ",vec(255),"type ",vec(0,161,255)," -update",vec(255)," to automatically update to the newest version.")    
     }
     runOnHTTP(0)
 }
