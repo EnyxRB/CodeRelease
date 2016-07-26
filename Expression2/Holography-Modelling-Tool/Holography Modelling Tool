@@ -1,7 +1,7 @@
 @name Holography Modelling Tool
 @persist CurHolo Index [Holos HoloPos HoloAng HoloScale HoloColor HoloModel HoloMaterial HoloAlpha]:array Inc Mode LastHolo 
 @persist CurIndex LastIndex Slave:entity [QMark Code Filename CopyMat CopyModel]:string IncAng Version:string MirrorIndex
-@persist [CopyColor CopyScale CopyPos]:vector CopyAng:angle CopyAlpha GitCode:string UpdateOption
+@persist [CopyColor CopyScale CopyPos]:vector CopyAng:angle CopyAlpha GitCode:string UpdateOption FileLoading:string
 
 "--------------------------------------------AUTHOR--------------------------------------------------"
 "####################################################################################################"
@@ -129,7 +129,8 @@ if (first() | dupefinished()){
     
     runOnKeys(owner(),1)
     runOnChat(1)
-    dsJoinGroup("holoCreator") 
+    runOnFile(1)
+    dsJoinGroup("hmtool") 
     
     #ifdef httpClk() 
     runOnHTTP(1)
@@ -628,7 +629,22 @@ if (chatClk(owner())){
             UpdateOption=0    
         }    
     }          
-      
+    elseif (Chat[1,string]=="-load"){
+        if (fileCanLoad()){
+            FileLoading = "../HoloTest.txt"#lastSaid():replace(Chat[1,string],"") + ".txt"
+            fileLoad(FileLoading)
+            colorPrint("Loading",FileLoading,"to tool")          
+        }
+        else{
+            colorPrint("Please wait a few seconds before loading another file","","")     
+        }
+    }    
+}
+
+if (fileClk(FileLoading)){
+    if (fileLoaded()){
+        print("FOUND FILE!")
+    }   
 }
 
 if (dsClk("init")){
