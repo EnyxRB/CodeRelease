@@ -85,8 +85,7 @@
 @trigger 
 
 if (first() | dupefinished()){
-    Boss = dsProbe("holoCreator")[1,entity]
-    dsJoinGroup("holoCreator")
+    Boss = dsProbe("hmtool")[1,entity]
     dsSendDirect("init",Boss,0)    
 }
 ]#
