@@ -19,10 +19,8 @@ if (first()){
     MinRPM = Engine:acfPowerbandMin()
     MaxRPM = Engine:acfPowerbandMax()
     DownshiftRPM = MinRPM+((MaxRPM-MinRPM)/5)
-    print(DownshiftRPM)
     MaxGear = Gearbox:acfNumGears()
     Gearbox:acfShift(1)
-    print(MaxGear)
     timer("main",10)  
 }
 
@@ -38,7 +36,6 @@ if (clk("main")){
                     local Gear = Gearbox:acfGear()
                     if (Gear<MaxGear){
                         Gearbox:acfShift(Gear+1)
-                        print(RPM)
                     }
                 }
             }    
