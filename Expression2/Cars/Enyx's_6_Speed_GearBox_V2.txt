@@ -1,4 +1,4 @@
-@name Enyx's 6 Speed GearBox V2
+@name Enyx's Holo 6 Speed GearBox V2
 @inputs Mouse1 Mouse2 PrevWeapon NextWeapon Clutch
 @outputs Gear Neutral
 @persist MaxGear Gear HoloGridDisplay Sounds Up Across
