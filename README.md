@@ -1,2 +1,2 @@
 # CodeRelease
-A place where i'll store and update the source of my current projects. I will most likely will only post Expression2 and Lua files here.
+A place where i'll store and update the source of my completed Expression 2 and Lua Garry's Mod projects. 
